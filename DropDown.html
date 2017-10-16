@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>DropDown HTML</title>
+	<link rel="stylesheet" href="css/drop.css">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$(".main-menu").click(function(){
+				var val = $(this).attr('id');
+				
+				if(val=="open"){
+					$(".menu").hide();
+					$(this).attr('id','');
+				}else{
+					$(".menu").show();
+					$(this).attr('id','open');
+				}
+			});
+			
+			$(".menu").mouseup(function(){
+			return false
+			});
+			
+			$(".main-menu").mouseup(function(){
+			return false
+			});
+			
+			$(document).mouseup(function(){
+				$(".menu").hide();
+				$(".main-menu").attr('id','');
+			});
+		});
+	</script>
+</head>
+<body>
+	<div style="margin:50px;">
+		<div class="navigation">
+			<a class="main-menu" href="#">Menu Utama</a>
+			<div class="menu">
+				<ul>
+					<li>
+						<a href="#">Sub Menu 1</a>
+					</li>
+					<li>
+						<a href="#">Sub Menu 2</a>
+					</li>
+					<li>
+						<a href="#">Sub Menu 3</a>
+					</li>
+					<li>
+						<a href="#">Sub Menu 4</a>
+					</li>
+					<li>
+						<a href="#">dst</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
